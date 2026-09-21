@@ -61,7 +61,7 @@ min_date = all_df["date"].min()
 max_date = all_df["date"].max()
 
 with st.sidebar:
-    # Menambahkan logo Dicoding
+    # Menambahkan logo Dicoding (pada bagian ini sama seperti latihan yang dilaksanakan dalam modul kelas Fundamental Analisis Data)
     st.image(
         "https://github.com/dicodingacademy/assets/raw/main/logo.png"
     )
@@ -87,7 +87,7 @@ pm25_jam_df = create_pm25_jam_df(main_df)
 korelasi_df = create_korelasi_df(main_df)
 kategori_stasiun_df = create_kategori_stasiun_df(main_df)
 
-# DASHBOARD
+# Dashboard
 st.header('Dashboard Kualitas Udara di Beijing :sparkles:')
 
 # PM2.5
@@ -125,7 +125,7 @@ ax.set_ylabel("Rata-rata PM2.5")
 ax.set_title("Tren Rata-rata PM2.5 Tahun 2013 - 2017", fontsize=25)
 st.pyplot(fig)
 
-# STASIUN
+# Stasius
 st.subheader("Highest & Lowest PM2.5 Station")
 
 fig, ax = plt.subplots(
@@ -174,7 +174,7 @@ ax[1].tick_params(axis='y', labelsize=35)
 ax[1].tick_params(axis='x', labelsize=30)
 st.pyplot(fig)
 
-# POLA WAKTU
+# Pola Waktu
 st.subheader("PM2.5 Patterns")
 col1, col2 = st.columns(2)
 # Pola berdasarkan bulan
@@ -219,7 +219,7 @@ with col2:
     ax.tick_params(axis='y', labelsize=20)
     st.pyplot(fig)
 
-# KORELASI
+# Korelasi
 st.subheader("Pollutant Correlation")
 fig, ax = plt.subplots(figsize=(20, 10))
 sns.heatmap(
@@ -232,7 +232,7 @@ sns.heatmap(
 ax.set_title("Korelasi antara polusi udara")
 st.pyplot(fig)
 
-# KATEGORI STASIUN
+# Kategori Stasiun
 st.subheader("Station Classification Based on PM2.5")
 fig, ax = plt.subplots(figsize=(20, 10))
 sns.barplot(x="PM2.5", y="station", hue="kategori",
@@ -262,4 +262,5 @@ st.dataframe(
     ),
     use_container_width=True
 )
+
 st.caption('Data dari dicoding')
